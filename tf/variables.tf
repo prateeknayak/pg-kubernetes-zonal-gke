@@ -14,11 +14,11 @@ variable "region" {
   default     = "australia-southeast1"
 }
 
-variable "location" {
-  type        = string
-  description = "GCP zone"
-  default     = "australia-southeast1-a"
-}
+# variable "location" {
+#   type        = string
+#   description = "GCP zone"
+#   default     = "australia-southeast1-a"
+# }
 
 variable "project" {
   type        = string
