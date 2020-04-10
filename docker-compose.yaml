@@ -1,0 +1,31 @@
+version: '3'
+services:
+  terraform:
+    image: hashicorp/terraform:light
+    working_dir: /app/
+    volumes:
+      - ./:/app/
+      - ~/.config/gcloud:/root/.config/gcloud
+
+  gcloud:
+    image: pnyak/gcloud-kubectl:v0.2.0
+    working_dir: /app/
+    entrypoint: gcloud
+    volumes:
+       - ~/.config/gcloud:/root/.config/gcloud
+       - ~/.kube:/root/.kube
+       - ./:/app/
+
+  kubectl:
+    image: pnyak/gcloud-kubectl:v0.2.0
+    working_dir: /app
+    volumes:
+      - ~/.kube:/root/.kube
+
+  helm:
+    image: lachlanevenson/k8s-helm:v2.11.0
+    working_dir: /app
+    volumes:
+      - ./:/app/
+      - ~/.kube:/root/.kube
+      - ~/.helm:/.helm
