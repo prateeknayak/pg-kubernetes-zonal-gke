@@ -1,6 +1,6 @@
 
 provider "google" {
-  version     = "3.12.0"
+  version     = "3.16.0"
   project     = var.project
   region      = var.region
   credentials = file(var.creds)
@@ -16,15 +16,9 @@ provider "google" {
     "https://www.googleapis.com/auth/userinfo.email",
   ]
 }
-# provider "google" {
-#   version     = "~> 1.19"
-#   credentials = "${file(var.creds)}"
-#   project     = "${var.project}"
-#   region      = "${var.region}"
-# }
 
 provider "google-beta" {
-  version = "2.12.0"
+  version = "3.16.0"
   project = var.project
   region  = var.region
 
@@ -39,11 +33,6 @@ provider "google-beta" {
     "https://www.googleapis.com/auth/userinfo.email",
   ]
 }
-
-# provider "kubernetes" {
-#   version = "~> 1.10.0"
-# }
-
 
 # provider "kubernetes" {
 #   version                = "~> 1.10, != 1.11.0"

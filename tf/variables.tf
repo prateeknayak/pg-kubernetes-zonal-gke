@@ -2,25 +2,16 @@
 ## Mandatory Vars
 ########
 
-variable "project" {
+variable "name" {
   type        = string
-  description = "GCP project name where the cluster will be created"
+  description = "Name of the cluster"
+  default     = "gke-zonal-test"
 }
-
-variable "service_account" {
-  type        = string
-  description = "Service account for the nodepools"
-
-}
-
-########
-## Optional Vars
-########
 
 variable "region" {
   type        = string
-  description = "GCP region where the clusters will be created"
-  default     = "austraila-southeast1"
+  description = "GCP region"
+  default     = "australia-southeast1"
 }
 
 variable "location" {
@@ -29,25 +20,33 @@ variable "location" {
   default     = "australia-southeast1-a"
 }
 
+variable "project" {
+  type        = string
+  description = "GCP project name where the cluster will be created"
+}
+
+variable "network" {
+  type        = string
+  description = "GCP network name where cluster will be created"
+  default     = "default"
+}
+
+variable "subnetwork" {
+  type        = string
+  description = "GCP subnetwork name where cluster will be created"
+  default     = "default"
+}
+
+variable "primary_np_node_count" {
+  type        = string
+  description = "Node count for primary node pool"
+  default     = "1"
+}
+
 variable "creds" {
   type        = string
   description = "Credential file for gcp service account"
   default     = "creds.json"
-}
-
-variable "gke_cluster_name_prefix" {
-  type        = string
-  description = "Name of the cluster"
-  default     = "gke-zonal-test"
-}
-
-########
-## Data Vars
-########
-
-data "google_container_engine_versions" "location" {
-  location = var.location
-  project  = var.project
 }
 
 variable "master_authorized_networks_cidr_blocks" {
@@ -63,3 +62,5 @@ variable "master_authorized_networks_cidr_blocks" {
 
   description = "auth networks"
 }
+
+
