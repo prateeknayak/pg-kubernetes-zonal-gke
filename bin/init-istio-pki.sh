@@ -1,4 +1,8 @@
-#! /bin/bash
+#!/bin/bash
+
+set -e
+
+gcloud container clusters get-credentials ${CLUSTER} --project ${PROJECT} --zone australia-southeast1-a
 
 # since we haven't seeded istio yet
 kubectl create namespace istio-system

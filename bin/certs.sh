@@ -1,9 +1,14 @@
-#! /bin/bash
+#!/bin/bash
 
 set -e
 
 certdir=.pki
 mkdir -p ${certdir}
+
+if [ "$(ls -A $certdir)" ]; then
+     echo ".pki directory contains pki for istio, hence skipping the generate process"
+     exit 0
+fi
 
 # Generate the root CA key
 openssl genrsa -out ${certdir}/root-ca-key.pem 4096
