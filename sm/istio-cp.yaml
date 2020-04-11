@@ -1,9 +1,7 @@
 apiVersion: install.istio.io/v1alpha2
-kind: IstioControlPlane
+kind: IstioOperator
 metadata:
   namespace: istio-operator
   name: demo-profile
 spec:
   profile: demo
-  telemetry:
-    enabled: false
