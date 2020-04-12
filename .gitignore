@@ -1,9 +1,11 @@
 .idea
 .vscode
 zonal-test
-.terraform 
+.terraform
 .terraform.tfstate.lock.info
 terraform.tfstate
 terraform.tfstate.backup
 .pki
 .srl
+
+microservices-demo
