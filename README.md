@@ -12,4 +12,15 @@ In this playground repo we attempt to create three clusters within `australia-so
     - Compute Viewer
     - Project IAM
 - Existing VPC with subnets to create GKE clusters in (todo: add network module)
+- Tools:
+    - terraform
+    - gcloud sdk
+    - kubectl
+    - istioctl
+
+### Steps to stand this up
+
+1. Set the required env vars
+    - export PROJECT=<your-project>
+    - export CREDS=<absolute-path-to-your-creds-file.json>
 

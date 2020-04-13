@@ -24,5 +24,9 @@ cluster-admin-binding:
 	kubectl cluster-info
 
 istio-install:
-	istioctl operator init
-	istioctl manifest apply -f sm/istio-cp.yaml
+	bin/certs.sh
+	bin/init-istio-pki.sh
+
+deploy-microservices-demo:
+	bin/deploy-microservices.sh
+
