@@ -8,7 +8,7 @@ else
     git clone https://github.com/GoogleCloudPlatform/microservices-demo.git
 fi
 
-for x in a b c
+for x in a
 do
     cluster=$(terraform output cluster-${x})
     project=$(terraform output project)

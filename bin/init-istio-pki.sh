@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for x in a b c
+for x in a
 do
     # generate kubeconfig for the cluster
     echo "get credentials"

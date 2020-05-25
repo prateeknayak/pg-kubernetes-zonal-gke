@@ -21,18 +21,18 @@ module "gke-zone-a" {
 
 ####################################################################################################################################################################
 
-module "gke-zone-b" {
-  source = "./modules/gke"
+# module "gke-zone-b" {
+#   source = "./modules/gke"
 
-  name       = "${var.name}-zone-b"
-  location   = "australia-southeast1-b"
-  project    = var.project
-  network    = "prateek-test"
-  subnetwork = "subnet-b"
+#   name       = "${var.name}-zone-b"
+#   location   = "australia-southeast1-b"
+#   project    = var.project
+#   network    = "prateek-test"
+#   subnetwork = "subnet-b"
 
-  master_authorized_networks_cidr_blocks = var.master_authorized_networks_cidr_blocks
-  primary_np_node_count                  = var.primary_np_node_count
-}
+#   master_authorized_networks_cidr_blocks = var.master_authorized_networks_cidr_blocks
+#   primary_np_node_count                  = var.primary_np_node_count
+# }
 
 # module "install-istio-b" {
 #   source       = "./modules/istio-init"
@@ -45,18 +45,18 @@ module "gke-zone-b" {
 
 ####################################################################################################################################################################
 
-module "gke-zone-c" {
-  source = "./modules/gke"
+# module "gke-zone-c" {
+#   source = "./modules/gke"
 
-  name       = "${var.name}-zone-c"
-  location   = "australia-southeast1-c"
-  project    = var.project
-  network    = "prateek-test"
-  subnetwork = "subnet-c"
+#   name       = "${var.name}-zone-c"
+#   location   = "australia-southeast1-c"
+#   project    = var.project
+#   network    = "prateek-test"
+#   subnetwork = "subnet-c"
 
-  master_authorized_networks_cidr_blocks = var.master_authorized_networks_cidr_blocks
-  primary_np_node_count                  = var.primary_np_node_count
-}
+#   master_authorized_networks_cidr_blocks = var.master_authorized_networks_cidr_blocks
+#   primary_np_node_count                  = var.primary_np_node_count
+# }
 
 # module "install-istio-c" {
 #   source       = "./modules/istio-init"

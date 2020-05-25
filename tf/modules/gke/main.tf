@@ -68,6 +68,12 @@ resource "google_container_cluster" "primary" {
     provider = "CALICO"
   }
 
+  ip_allocation_policy {
+    // Choose the range, but let GCP pick the IPs within the range
+    cluster_secondary_range_name  = "${var.name}-sec-range"
+    services_secondary_range_name = "${var.name}-services-sec-range"
+  }
+
   depends_on = [google_service_account.service_account]
 }
 
